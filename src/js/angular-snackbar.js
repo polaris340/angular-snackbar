@@ -43,9 +43,10 @@ angular.module('snackbar', [])
             $timeout.cancel(snackbarTimeout);
 
             snackbarScope.snackbar = options;
-            snackbarScope.show = true;
+            snackbarScope.snackbar.show = true;
+
             snackbarTimeout = $timeout(function () {
-              snackbarScope.show = false;
+              snackbarScope.snackbar.show = false;
             }, options.duration);
           }
         };
