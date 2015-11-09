@@ -48,6 +48,9 @@ angular.module('snackbar', [])
             snackbarTimeout = $timeout(function () {
               snackbarScope.snackbar.show = false;
             }, options.duration);
+          },
+          hide: function () {
+            snackbarScope.snackbar.show = false;
           }
         };
 
