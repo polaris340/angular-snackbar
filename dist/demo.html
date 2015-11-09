@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="snackbar">
+<div ng-controller="TestController">
+    <button ng-click="showSnackbar()">show snackbar</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="../src/js/angular-snackbar.js"></script>
+<script>
+    angular.module('snackbar').controller('TestController', ['$scope', 'snackbar', function ($scope, snackbar) {
+        $scope.showSnackbar = function () {
+
+            snackbar.show({
+                message: 'hi!',
+                duration: 1000,
+                buttons: [{
+                    text: 'button 1',
+                    onClick: function () {
+                        alert('button 1 clicked');
+                    }
+                }, {
+                    text: 'button 2',
+                    onClick: function () {
+                        alert('button 2 clicked');
+                    }
+                }]
+            });
+        };
+    }]);
+
+</script>
+</body>
+</html>
